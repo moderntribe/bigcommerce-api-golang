@@ -1,0 +1,24 @@
+diff -ur storeinfo.orig/client/store_information/get_store_responses.go storeinfo/client/store_information/get_store_responses.go
+--- storeinfo.orig/client/store_information/get_store_responses.go	2021-01-04 23:07:56.000000000 -0700
++++ storeinfo/client/store_information/get_store_responses.go	2021-01-04 23:06:49.000000000 -0700
+@@ -278,7 +278,7 @@
+ 	FacebookCatalogID string `json:"facebook_catalog_id,omitempty"`
+ 
+ 	// Indicates if there is sitewide https.
+-	SitewidehttpsEnabled string `json:"sitewidehttps_enabled,omitempty"`
++	SitewidehttpsEnabled bool `json:"sitewidehttps_enabled,omitempty"`
+ 
+ 	// Indicates whether a store is using a Stencil theme.
+ 	StencilEnabled bool `json:"stencil_enabled,omitempty"`
+diff -ur storeinfo.orig/models/store_information.go storeinfo/models/store_information.go
+--- storeinfo.orig/models/store_information.go	2021-01-04 23:07:56.000000000 -0700
++++ storeinfo/models/store_information.go	2021-01-04 23:06:49.000000000 -0700
+@@ -221,7 +221,7 @@
+ 	FacebookCatalogID string `json:"facebook_catalog_id,omitempty"`
+ 
+ 	// Indicates if there is sitewide https.
+-	SitewidehttpsEnabled string `json:"sitewidehttps_enabled,omitempty"`
++	SitewidehttpsEnabled bool `json:"sitewidehttps_enabled,omitempty"`
+ 
+ 	// Indicates whether a store is using a Stencil theme.
+ 	StencilEnabled bool `json:"stencil_enabled,omitempty"`

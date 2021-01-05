@@ -1,0 +1,68 @@
+diff -ur widgets.orig/client/placement/create_placement_responses.go widgets/client/placement/create_placement_responses.go
+--- widgets.orig/client/placement/create_placement_responses.go	2021-01-05 11:46:55.000000000 -0700
++++ widgets/client/placement/create_placement_responses.go	2021-01-05 11:51:29.000000000 -0700
+@@ -435,6 +435,13 @@
+ 	return nil
+ }
+ 
++func (o *CreatePlacementOKBody) validateStatusEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, createPlacementBodyTypeStatusPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
+ func (o *CreatePlacementOKBody) validateData(formats strfmt.Registry) error {
+ 
+ 	if swag.IsZero(o.Data) { // not required
+diff -ur widgets.orig/client/placement/get_placement_responses.go widgets/client/placement/get_placement_responses.go
+--- widgets.orig/client/placement/get_placement_responses.go	2021-01-05 11:46:55.000000000 -0700
++++ widgets/client/placement/get_placement_responses.go	2021-01-05 11:50:03.000000000 -0700
+@@ -317,6 +317,13 @@
+ 	return nil
+ }
+ 
++func (o *GetPlacementOKBody) validateStatusEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, getPlacementsOKBodyDataItems0TypeStatusPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
+ func (o *GetPlacementOKBody) validateData(formats strfmt.Registry) error {
+ 
+ 	if swag.IsZero(o.Data) { // not required
+diff -ur widgets.orig/client/placement/update_placement_responses.go widgets/client/placement/update_placement_responses.go
+--- widgets.orig/client/placement/update_placement_responses.go	2021-01-05 11:46:56.000000000 -0700
++++ widgets/client/placement/update_placement_responses.go	2021-01-05 11:50:40.000000000 -0700
+@@ -495,6 +495,13 @@
+ 	return nil
+ }
+ 
++func (o *UpdatePlacementOKBody) validateStatusEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, updatePlacementBodyTypeStatusPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
+ func (o *UpdatePlacementOKBody) validateData(formats strfmt.Registry) error {
+ 
+ 	if swag.IsZero(o.Data) { // not required
+diff -ur widgets.orig/go.mod widgets/go.mod
+--- widgets.orig/go.mod	2021-01-05 11:46:47.000000000 -0700
++++ widgets/go.mod	2021-01-05 11:47:57.000000000 -0700
+@@ -1,3 +1,12 @@
+ module bigcommerce.com/apis/clients/widgets
+ 
+ go 1.15
++require (
++	github.com/go-errors/errors v1.1.1 // indirect
++	github.com/go-openapi/errors v0.19.9
++	github.com/go-openapi/runtime v0.19.24
++	github.com/go-openapi/spec v0.19.8 // indirect
++	github.com/go-openapi/strfmt v0.19.5
++	github.com/go-openapi/swag v0.19.9
++	github.com/go-openapi/validate v0.19.10
++)
+\ No newline at end of file
