@@ -12,6 +12,9 @@ clients as changes are made to the published BC apis. To get started though, tha
 
 You must have installed `go` as per https://golang.org/doc/install
 
+To build api clients, you must install `go-swagger` as per https://goswagger.io/
+The main swagger-codegen client for `go` is incomplete and does not work, hence the use of this codegen tool instead.
+
 ### Authentication
 
 * Create your BigCommerce Store and App if you haven't already

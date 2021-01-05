@@ -81,19 +81,6 @@ const apis = [
   },
 ];
 
-const installSwagger = (done) => {
-  try {
-    fs.accessSync('./bin/swagger-codegen-cli.jar');
-    return done();
-  } catch (err) {
-    return download({
-      url: 'https://repo1.maven.org/maven2/io/swagger/swagger-codegen-cli/2.4.9/swagger-codegen-cli-2.4.9.jar',
-      file: 'swagger-codegen-cli.jar',
-    })
-      .pipe(gulp.dest('bin'));
-  }
-};
-
 const install = api => done => {
   // gem build clients/StoreInfo/swagger_client_store_info.gemspec
   // gem install --user-install clients/StoreInfo/swagger_client_store_info-1.0.0.gem
@@ -229,7 +216,6 @@ const applyPatch = api => (done) => {
 const buildClean = (api) => {
   return gulp.series(
     Object.assign(clean(api), { displayName: 'clean' }),
-    // installSwagger,
     Object.assign(gomodule(api), { displayName: 'gomodule' }),
     Object.assign(codegen(api), { displayName: 'codegen' }),
     // Object.assign(processSourceFiles(api), { displayName: 'processSourceFiles' }),
