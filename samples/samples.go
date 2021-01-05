@@ -27,4 +27,5 @@ func main() {
 	getThemes()
 	getWidgets()
 	getSubscribers()
+	getScripts()
 }

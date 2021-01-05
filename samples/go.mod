@@ -10,7 +10,10 @@ replace bigcommerce.com/apis/clients/widgets => ../clients/widgets
 
 replace bigcommerce.com/apis/clients/subscribers => ../clients/subscribers
 
+replace bigcommerce.com/apis/clients/scripts => ../clients/scripts
+
 require (
+	bigcommerce.com/apis/clients/scripts v0.0.0-00010101000000-000000000000
 	bigcommerce.com/apis/clients/storeinfo v0.0.0-00010101000000-000000000000
 	bigcommerce.com/apis/clients/subscribers v0.0.0-00010101000000-000000000000
 	bigcommerce.com/apis/clients/themes v0.0.0-00010101000000-000000000000

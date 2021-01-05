@@ -1,0 +1,152 @@
+diff -ur scripts.orig/client/scripts/create_script_responses.go scripts/client/scripts/create_script_responses.go
+--- scripts.orig/client/scripts/create_script_responses.go	2021-01-05 12:33:33.000000000 -0700
++++ scripts/client/scripts/create_script_responses.go	2021-01-05 12:37:47.000000000 -0700
+@@ -640,6 +640,41 @@
+ 	return nil
+ }
+ 
++func (o *CreateScriptOKBody) validateConsentCategoryEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, createScriptBodyTypeConsentCategoryPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
++func (o *CreateScriptOKBody) validateKindEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, createScriptBodyTypeKindPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
++func (o *CreateScriptOKBody) validateLoadMethodEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, createScriptBodyTypeLoadMethodPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
++func (o *CreateScriptOKBody) validateLocationEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, createScriptBodyTypeLocationPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
++func (o *CreateScriptOKBody) validateVisibilityEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, createScriptBodyTypeVisibilityPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
+ func (o *CreateScriptOKBody) validateData(formats strfmt.Registry) error {
+ 
+ 	if swag.IsZero(o.Data) { // not required
+diff -ur scripts.orig/client/scripts/get_script_responses.go scripts/client/scripts/get_script_responses.go
+--- scripts.orig/client/scripts/get_script_responses.go	2021-01-05 12:33:33.000000000 -0700
++++ scripts/client/scripts/get_script_responses.go	2021-01-05 12:39:38.000000000 -0700
+@@ -372,6 +372,41 @@
+ 	return nil
+ }
+ 
++func (o *GetScriptOKBody) validateConsentCategoryEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, createScriptBodyTypeConsentCategoryPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
++func (o *GetScriptOKBody) validateKindEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, createScriptBodyTypeKindPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
++func (o *GetScriptOKBody) validateLoadMethodEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, createScriptBodyTypeLoadMethodPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
++func (o *GetScriptOKBody) validateLocationEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, createScriptBodyTypeLocationPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
++func (o *GetScriptOKBody) validateVisibilityEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, createScriptBodyTypeVisibilityPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
+ func (o *GetScriptOKBody) validateData(formats strfmt.Registry) error {
+ 
+ 	if swag.IsZero(o.Data) { // not required
+diff -ur scripts.orig/client/scripts/update_script_responses.go scripts/client/scripts/update_script_responses.go
+--- scripts.orig/client/scripts/update_script_responses.go	2021-01-05 12:33:33.000000000 -0700
++++ scripts/client/scripts/update_script_responses.go	2021-01-05 12:40:11.000000000 -0700
+@@ -808,6 +808,41 @@
+ 	return nil
+ }
+ 
++func (o *UpdateScriptOKBody) validateConsentCategoryEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, createScriptBodyTypeConsentCategoryPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
++func (o *UpdateScriptOKBody) validateKindEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, createScriptBodyTypeKindPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
++func (o *UpdateScriptOKBody) validateLoadMethodEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, createScriptBodyTypeLoadMethodPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
++func (o *UpdateScriptOKBody) validateLocationEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, createScriptBodyTypeLocationPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
++func (o *UpdateScriptOKBody) validateVisibilityEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, createScriptBodyTypeVisibilityPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
+ func (o *UpdateScriptOKBody) validateData(formats strfmt.Registry) error {
+ 
+ 	if swag.IsZero(o.Data) { // not required
+diff -ur scripts.orig/go.mod scripts/go.mod
+--- scripts.orig/go.mod	2021-01-05 12:33:33.000000000 -0700
++++ scripts/go.mod	2021-01-05 12:34:03.000000000 -0700
+@@ -1,3 +1,13 @@
+ module bigcommerce.com/apis/clients/scripts
+ 
+ go 1.15
++
++require (
++	github.com/go-errors/errors v1.1.1 // indirect
++	github.com/go-openapi/errors v0.19.9
++	github.com/go-openapi/runtime v0.19.24
++	github.com/go-openapi/spec v0.19.8 // indirect
++	github.com/go-openapi/strfmt v0.19.5
++	github.com/go-openapi/swag v0.19.9
++	github.com/go-openapi/validate v0.19.10
++)
