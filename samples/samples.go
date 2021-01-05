@@ -26,4 +26,5 @@ func main() {
 	getStoreInfo()
 	getThemes()
 	getWidgets()
+	getSubscribers()
 }

@@ -27,11 +27,12 @@ const apis = [
     url: 'https://developer.bigcommerce.com/api-reference/store-management/themes/themes.v3.json',
     moduleName: 'themes',
   },
-  {
-    name: 'Catalog',
-    url: 'https://developer.bigcommerce.com/api-reference/store-management/catalog/catalog.v3.json',
-    moduleName: 'catalog',
-  },
+  // segfault
+  // {
+  //   name: 'Catalog',
+  //   url: 'https://developer.bigcommerce.com/api-reference/store-management/catalog/catalog.v3.json',
+  //   moduleName: 'catalog',
+  // },
   {
     name: 'Subscribers',
     url: 'https://developer.bigcommerce.com/api-reference/store-management/subscribers/subscribers.v3.json',
