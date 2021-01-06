@@ -17,7 +17,7 @@ func getConfig() map[string]interface{} {
 	byteValue, _ := ioutil.ReadAll(jsonFile)
 
 	var result map[string]interface{}
-	json.Unmarshal([]byte(byteValue), &result)
+	json.Unmarshal(byteValue, &result)
 
 	return result
 }
