@@ -18,3 +18,5 @@ bin/
 gulpfile.config.json
 
 **/test/config.js
+
+samples/samples
