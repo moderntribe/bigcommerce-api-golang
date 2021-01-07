@@ -22,6 +22,8 @@ replace bigcommerce.com/apis/clients/channels => ../clients/channels
 
 replace bigcommerce.com/apis/clients/carts => ../clients/carts
 
+replace bigcommerce.com/apis/clients/wishlists => ../clients/wishlists
+
 require (
 	bigcommerce.com/apis/clients/carts v0.0.0-00010101000000-000000000000
 	bigcommerce.com/apis/clients/channels v0.0.0-00010101000000-000000000000
@@ -33,5 +35,6 @@ require (
 	bigcommerce.com/apis/clients/subscribers v0.0.0-00010101000000-000000000000
 	bigcommerce.com/apis/clients/themes v0.0.0-00010101000000-000000000000
 	bigcommerce.com/apis/clients/widgets v0.0.0-00010101000000-000000000000
+	bigcommerce.com/apis/clients/wishlists v0.0.0-00010101000000-000000000000
 	github.com/go-openapi/runtime v0.19.24
 )

@@ -52,4 +52,7 @@ func main() {
 	log.Println("---")
 
 	getCarts()
+	log.Println("---")
+
+	getWishlists()
 }
