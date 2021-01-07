@@ -66,12 +66,12 @@ const apis = [
     moduleName: 'ordersv3',
     patch: 'ordersv3.patch',
   },
-  // spec has gone missing
-  // {
-  //   name: 'Sites',
-  //   url: 'https://developer.bigcommerce.com/api-reference/cart-checkout/sites-routes-api/BigCommerce_Sites_Routes_API.oas2.json',
-  //   moduleName: 'sites',
-  // },
+  {
+    name: 'Sites',
+    url: 'https://developer.bigcommerce.com/api-reference/store-management/sites/sites.v3.json',
+    moduleName: 'sites',
+    patch: 'sites.patch',
+  },
   {
     name: 'Channels',
     url: 'https://developer.bigcommerce.com/api-reference/store-management/channels/channels.v3.json',

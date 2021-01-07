@@ -55,4 +55,7 @@ func main() {
 	log.Println("---")
 
 	getWishlists()
+	log.Println("---")
+
+	getSites()
 }

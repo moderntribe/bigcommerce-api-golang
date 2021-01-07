@@ -22,5 +22,5 @@ func getSubscribers() {
 		log.Print("Had an error")
 		log.Fatal(err)
 	}
-	log.Printf("Payload: %#v\n", resp.Payload)
+	log.Printf("Payload: %#v\n", resp.GetPayload())
 }

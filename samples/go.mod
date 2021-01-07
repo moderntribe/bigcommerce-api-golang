@@ -24,6 +24,8 @@ replace bigcommerce.com/apis/clients/carts => ../clients/carts
 
 replace bigcommerce.com/apis/clients/wishlists => ../clients/wishlists
 
+replace bigcommerce.com/apis/clients/sites => ../clients/sites
+
 require (
 	bigcommerce.com/apis/clients/carts v0.0.0-00010101000000-000000000000
 	bigcommerce.com/apis/clients/channels v0.0.0-00010101000000-000000000000
@@ -31,6 +33,7 @@ require (
 	bigcommerce.com/apis/clients/ordersv3 v0.0.0-00010101000000-000000000000
 	bigcommerce.com/apis/clients/pricelists v0.0.0-00010101000000-000000000000
 	bigcommerce.com/apis/clients/scripts v0.0.0-00010101000000-000000000000
+	bigcommerce.com/apis/clients/sites v0.0.0-00010101000000-000000000000
 	bigcommerce.com/apis/clients/storeinfo v0.0.0-00010101000000-000000000000
 	bigcommerce.com/apis/clients/subscribers v0.0.0-00010101000000-000000000000
 	bigcommerce.com/apis/clients/themes v0.0.0-00010101000000-000000000000

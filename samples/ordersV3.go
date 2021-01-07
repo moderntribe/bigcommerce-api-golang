@@ -20,9 +20,9 @@ func getTransactions() {
 	params := transactions.NewGetTransactionsParams()
 	params.OrderID = 10
 	ok, content, err := client.Transactions.GetTransactions(params, apiKeyHeaderAuth)
-	log.Printf("OK: %#v\n", ok)
+	log.Printf("OK: %#v\n", ok, ok)
 	if err != nil {
-		log.Printf("err (expected): %#v\n", err)
+		log.Printf("err (expected): %#v\n", err, err)
 	}
-	log.Printf("Content: %#v\n", content)
+	log.Printf("Content: %#v\n", content, content)
 }

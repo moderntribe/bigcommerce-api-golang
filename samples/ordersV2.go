@@ -22,6 +22,6 @@ func getOrders() {
 	if err != nil {
 		// get a 204 when there are no orders, but that wasn't in the spec, so we get an error
 		log.Printf("Err (expected): %#v\n", err)
-		log.Printf("Payload: %#v\n", resp)
+		log.Printf("Payload: %#v\n", resp, resp)
 	}
 }
