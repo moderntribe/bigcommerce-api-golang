@@ -77,6 +77,7 @@ const apis = [
     name: 'Channels',
     url: 'https://developer.bigcommerce.com/api-reference/store-management/channels/channels.v3.json',
     moduleName: 'channels',
+    patch: 'channels.patch',
   },
   {
     name: 'Carts',

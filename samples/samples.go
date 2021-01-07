@@ -31,4 +31,5 @@ func main() {
 	getPricelists()
 	getOrders()
 	getTransactions()
+	getChannels()
 }

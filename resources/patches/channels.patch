@@ -1,0 +1,91 @@
+diff -ur channels.orig/client/channels/create_channel_responses.go channels/client/channels/create_channel_responses.go
+--- channels.orig/client/channels/create_channel_responses.go	2021-01-07 09:58:57.000000000 -0700
++++ channels/client/channels/create_channel_responses.go	2021-01-07 10:05:19.000000000 -0700
+@@ -636,6 +636,20 @@
+ 	return nil
+ }
+ 
++func (o *CreateChannelCreatedBody) validatePlatformEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, createChannelBodyTypePlatformPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
++func (o *CreateChannelCreatedBody) validateTypeEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, createChannelBodyTypeTypePropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
+ // MarshalBinary interface implementation
+ func (o *CreateChannelCreatedBody) MarshalBinary() ([]byte, error) {
+ 	if o == nil {
+diff -ur channels.orig/client/channels/get_channel_responses.go channels/client/channels/get_channel_responses.go
+--- channels.orig/client/channels/get_channel_responses.go	2021-01-07 09:58:57.000000000 -0700
++++ channels/client/channels/get_channel_responses.go	2021-01-07 10:06:22.000000000 -0700
+@@ -222,6 +222,21 @@
+ 	return nil
+ }
+ 
++func (o *GetChannelOKBody) validatePlatformEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, getChannelOKBodyDataAllOf1TypePlatformPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
++func (o *GetChannelOKBody) validateTypeEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, getChannelOKBodyDataAllOf1TypeTypePropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
++
+ // MarshalBinary interface implementation
+ func (o *GetChannelOKBody) MarshalBinary() ([]byte, error) {
+ 	if o == nil {
+diff -ur channels.orig/client/channels/update_channel_responses.go channels/client/channels/update_channel_responses.go
+--- channels.orig/client/channels/update_channel_responses.go	2021-01-07 09:58:57.000000000 -0700
++++ channels/client/channels/update_channel_responses.go	2021-01-07 10:07:18.000000000 -0700
+@@ -666,6 +666,21 @@
+ 	return nil
+ }
+ 
++func (o *UpdateChannelOKBody) validatePlatformEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, updateChannelOKBodyDataAllOf1TypePlatformPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
++func (o *UpdateChannelOKBody) validateTypeEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, updateChannelOKBodyDataAllOf1TypeTypePropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
++
+ // MarshalBinary interface implementation
+ func (o *UpdateChannelOKBody) MarshalBinary() ([]byte, error) {
+ 	if o == nil {
+diff -ur channels.orig/go.mod channels/go.mod
+--- channels.orig/go.mod	2021-01-07 09:58:51.000000000 -0700
++++ channels/go.mod	2021-01-07 10:02:21.000000000 -0700
+@@ -1,3 +1,13 @@
+ module bigcommerce.com/apis/clients/channels
+ 
+ go 1.15
++
++require (
++	github.com/go-errors/errors v1.1.1 // indirect
++	github.com/go-openapi/errors v0.19.9
++	github.com/go-openapi/runtime v0.19.24
++	github.com/go-openapi/spec v0.19.8 // indirect
++	github.com/go-openapi/strfmt v0.19.5
++	github.com/go-openapi/swag v0.19.9
++	github.com/go-openapi/validate v0.19.10
++)
