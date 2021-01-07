@@ -30,4 +30,5 @@ func main() {
 	getScripts()
 	getPricelists()
 	getOrders()
+	getTransactions()
 }

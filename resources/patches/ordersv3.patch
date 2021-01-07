@@ -1,0 +1,107 @@
+diff -ur ordersv3.orig/client/metafields/create_order_metafield_responses.go ordersv3/client/metafields/create_order_metafield_responses.go
+--- ordersv3.orig/client/metafields/create_order_metafield_responses.go	2021-01-07 00:21:58.000000000 -0700
++++ ordersv3/client/metafields/create_order_metafield_responses.go	2021-01-07 00:38:44.000000000 -0700
+@@ -693,6 +693,20 @@
+ 	return nil
+ }
+ 
++func (o *CreateOrderMetafieldOKBody) validatePermissionSetEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, createOrderMetafieldBodyTypePermissionSetPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
++func (o *CreateOrderMetafieldOKBody) validateResourceTypeEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, createOrderMetafieldBodyTypeResourceTypePropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
+ func (o *CreateOrderMetafieldOKBody) validateData(formats strfmt.Registry) error {
+ 
+ 	if swag.IsZero(o.Data) { // not required
+diff -ur ordersv3.orig/client/metafields/get_order_metafield_by_order_id_and_metafield_id_responses.go ordersv3/client/metafields/get_order_metafield_by_order_id_and_metafield_id_responses.go
+--- ordersv3.orig/client/metafields/get_order_metafield_by_order_id_and_metafield_id_responses.go	2021-01-07 00:21:58.000000000 -0700
++++ ordersv3/client/metafields/get_order_metafield_by_order_id_and_metafield_id_responses.go	2021-01-07 00:41:08.000000000 -0700
+@@ -241,6 +241,20 @@
+ 	return nil
+ }
+ 
++func (o *GetOrderMetafieldByOrderIDAndMetafieldIDOKBody) validatePermissionSetEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, getOrderMetafieldsByOrderIdOKBodyDataItems0TypePermissionSetPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
++func (o *GetOrderMetafieldByOrderIDAndMetafieldIDOKBody) validateResourceTypeEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, getOrderMetafieldsByOrderIdOKBodyDataItems0TypeResourceTypePropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
+ func (o *GetOrderMetafieldByOrderIDAndMetafieldIDOKBody) validateData(formats strfmt.Registry) error {
+ 
+ 	if swag.IsZero(o.Data) { // not required
+diff -ur ordersv3.orig/client/metafields/update_order_metafield_responses.go ordersv3/client/metafields/update_order_metafield_responses.go
+--- ordersv3.orig/client/metafields/update_order_metafield_responses.go	2021-01-07 00:21:58.000000000 -0700
++++ ordersv3/client/metafields/update_order_metafield_responses.go	2021-01-07 00:42:08.000000000 -0700
+@@ -627,6 +627,20 @@
+ 	return nil
+ }
+ 
++func (o *UpdateOrderMetafieldOKBody) validatePermissionSetEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, updateOrderMetafieldBodyTypePermissionSetPropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
++func (o *UpdateOrderMetafieldOKBody) validateResourceTypeEnum(path, location string, value string) error {
++	if err := validate.EnumCase(path, location, value, updateOrderMetafieldBodyTypeResourceTypePropEnum, true); err != nil {
++		return err
++	}
++	return nil
++}
++
+ func (o *UpdateOrderMetafieldOKBody) validateData(formats strfmt.Registry) error {
+ 
+ 	if swag.IsZero(o.Data) { // not required
+diff -ur ordersv3.orig/client/transactions/get_transactions_responses.go ordersv3/client/transactions/get_transactions_responses.go
+--- ordersv3.orig/client/transactions/get_transactions_responses.go	2021-01-07 00:21:58.000000000 -0700
++++ ordersv3/client/transactions/get_transactions_responses.go	2021-01-07 00:35:00.000000000 -0700
+@@ -410,11 +410,6 @@
+ 	// cvv result
+ 	CvvResult *GetTransactionsOKBodyDataItems0AO1CvvResult `json:"cvv_result,omitempty"`
+ 
+-	// The datetime of the transaction.
+-	//
+-	// Format: date-time
+-	DateCreated strfmt.DateTime `json:"date_created,omitempty"`
+-
+ 	// gift certificate
+ 	GiftCertificate *GetTransactionsOKBodyDataItems0AO1GiftCertificate `json:"gift_certificate,omitempty"`
+ 
+@@ -982,19 +977,6 @@
+ 	return nil
+ }
+ 
+-func (o *GetTransactionsOKBodyDataItems0) validateDateCreated(formats strfmt.Registry) error {
+-
+-	if swag.IsZero(o.DateCreated) { // not required
+-		return nil
+-	}
+-
+-	if err := validate.FormatOf("date_created", "body", "date-time", o.DateCreated.String(), formats); err != nil {
+-		return err
+-	}
+-
+-	return nil
+-}
+-
+ func (o *GetTransactionsOKBodyDataItems0) validateGiftCertificate(formats strfmt.Registry) error {
+ 
+ 	if swag.IsZero(o.GiftCertificate) { // not required

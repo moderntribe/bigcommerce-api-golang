@@ -65,6 +65,7 @@ const apis = [
     name: 'OrdersV3',
     url: 'https://developer.bigcommerce.com/api-reference/store-management/order-transactions/orders.v3.json',
     moduleName: 'ordersv3',
+    patch: 'ordersv3.patch',
   },
   // spec has gone missing
   // {

@@ -51,3 +51,7 @@ gulp buildOne --name StoreInfo
 ## Adding a new API
 
 Make sure it is in the gulpfile.esm.js and in the index.js. Update as above.
+
+## Debugging
+
+Add the DEBUG env variable before running your code to see requests and responses.
