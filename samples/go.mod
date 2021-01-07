@@ -12,7 +12,13 @@ replace bigcommerce.com/apis/clients/subscribers => ../clients/subscribers
 
 replace bigcommerce.com/apis/clients/scripts => ../clients/scripts
 
+replace bigcommerce.com/apis/clients/pricelists => ../clients/pricelists
+
+replace bigcommerce.com/apis/clients/ordersv2 => ../clients/ordersv2
+
 require (
+	bigcommerce.com/apis/clients/ordersv2 v0.0.0-00010101000000-000000000000
+	bigcommerce.com/apis/clients/pricelists v0.0.0-00010101000000-000000000000
 	bigcommerce.com/apis/clients/scripts v0.0.0-00010101000000-000000000000
 	bigcommerce.com/apis/clients/storeinfo v0.0.0-00010101000000-000000000000
 	bigcommerce.com/apis/clients/subscribers v0.0.0-00010101000000-000000000000

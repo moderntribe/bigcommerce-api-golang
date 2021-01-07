@@ -54,6 +54,7 @@ const apis = [
     name: 'PriceLists',
     url: 'https://developer.bigcommerce.com/api-reference/store-management/price-lists/price_lists.v3.json',
     moduleName: 'pricelists',
+    patch: 'pricelists.patch',
   },
   {
     name: 'OrdersV2',

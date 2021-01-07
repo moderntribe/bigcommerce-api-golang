@@ -28,4 +28,6 @@ func main() {
 	getWidgets()
 	getSubscribers()
 	getScripts()
+	getPricelists()
+	getOrders()
 }
