@@ -1,0 +1,70 @@
+diff -ur carts.orig/client/cart/create_a_cart_responses.go carts/client/cart/create_a_cart_responses.go
+--- carts.orig/client/cart/create_a_cart_responses.go	2021-01-07 10:11:52.000000000 -0700
++++ carts/client/cart/create_a_cart_responses.go	2021-01-07 10:21:40.000000000 -0700
+@@ -8,14 +8,13 @@
+ import (
+ 	"encoding/json"
+ 	"fmt"
+-	"io"
+-	"strconv"
+-
+ 	"github.com/go-openapi/errors"
+ 	"github.com/go-openapi/runtime"
+ 	"github.com/go-openapi/strfmt"
+ 	"github.com/go-openapi/swag"
+ 	"github.com/go-openapi/validate"
++	"io"
++	"strconv"
+ )
+ 
+ // CreateACartReader is a Reader for the CreateACart structure.
+@@ -2750,7 +2749,7 @@
+ 		return nil
+ 	}
+ 
+-	if err := validate.Maximum("message", "body", float64(o.Message), 200, false); err != nil {
++	if err := validate.Maximum("message", "body", float64(len(o.Message)), 200, false); err != nil {
+ 		return err
+ 	}
+ 
+diff -ur carts.orig/client/cart_items/add_cart_line_item_responses.go carts/client/cart_items/add_cart_line_item_responses.go
+--- carts.orig/client/cart_items/add_cart_line_item_responses.go	2021-01-07 10:11:53.000000000 -0700
++++ carts/client/cart_items/add_cart_line_item_responses.go	2021-01-07 10:21:40.000000000 -0700
+@@ -2687,7 +2687,7 @@
+ 		return nil
+ 	}
+ 
+-	if err := validate.Maximum("message", "body", float64(o.Message), 200, false); err != nil {
++	if err := validate.Maximum("message", "body", float64(len(o.Message)), 200, false); err != nil {
+ 		return err
+ 	}
+ 
+diff -ur carts.orig/client/cart_items/update_cart_line_item_responses.go carts/client/cart_items/update_cart_line_item_responses.go
+--- carts.orig/client/cart_items/update_cart_line_item_responses.go	2021-01-07 10:11:53.000000000 -0700
++++ carts/client/cart_items/update_cart_line_item_responses.go	2021-01-07 10:21:40.000000000 -0700
+@@ -2687,7 +2687,7 @@
+ 		return nil
+ 	}
+ 
+-	if err := validate.Maximum("message", "body", float64(o.Message), 200, false); err != nil {
++	if err := validate.Maximum("message", "body", float64(len(o.Message)), 200, false); err != nil {
+ 		return err
+ 	}
+ 
+diff -ur carts.orig/go.mod carts/go.mod
+--- carts.orig/go.mod	2021-01-07 10:12:34.000000000 -0700
++++ carts/go.mod	2021-01-07 10:17:15.000000000 -0700
+@@ -1,3 +1,13 @@
+ module bigcommerce.com/apis/clients/carts
+ 
+ go 1.15
++
++require (
++	github.com/go-errors/errors v1.1.1 // indirect
++	github.com/go-openapi/errors v0.19.9
++	github.com/go-openapi/runtime v0.19.24
++	github.com/go-openapi/spec v0.19.8 // indirect
++	github.com/go-openapi/strfmt v0.19.5
++	github.com/go-openapi/swag v0.19.9
++	github.com/go-openapi/validate v0.19.10
++)

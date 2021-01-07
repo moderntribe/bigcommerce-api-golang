@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"os"
 )
 
@@ -24,12 +25,31 @@ func getConfig() map[string]interface{} {
 
 func main() {
 	getStoreInfo()
+	log.Println("---")
+
 	getThemes()
+	log.Println("---")
+
 	getWidgets()
+	log.Println("---")
+
 	getSubscribers()
+	log.Println("---")
+
 	getScripts()
+	log.Println("---")
+
 	getPricelists()
+	log.Println("---")
+
 	getOrders()
+	log.Println("---")
+
 	getTransactions()
+	log.Println("---")
+
 	getChannels()
+	log.Println("---")
+
+	getCarts()
 }

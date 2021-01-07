@@ -10,12 +10,11 @@ import { find } from 'lodash';
 import merge from 'gulp-merge-json';
 
 const apis = [
-  // disappeared as of Oct 4, 2020
-  // {
-  //   name: 'Wishlists',
-  //   url: 'https://developer.bigcommerce.com/api-reference/customer-subscribers/wishlist-api/BigCommerce_Wishlist_API.oas2.json',
-  //   moduleName: 'wishlists',
-  // },
+  {
+    name: 'Wishlists',
+    url: 'https://developer.bigcommerce.com/api-reference/store-management/wishlists/wishlists.v3.json',
+    moduleName: 'wishlists',
+  },
   {
     name: 'Widgets',
     url: 'https://developer.bigcommerce.com/api-reference/store-management/widgets/widgets.v3.json',
@@ -83,6 +82,7 @@ const apis = [
     name: 'Carts',
     url: 'https://developer.bigcommerce.com/api-reference/store-management/carts/carts.v3.json',
     moduleName: 'carts',
+    patch: 'carts.patch',
   },
 ];
 
